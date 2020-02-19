@@ -25,7 +25,6 @@ public class ViewCard : MonoBehaviour
         monsterCard = gameObject.GetComponent<Monster>().GetMonster();
         if (monsterCard.Id != "")
         {
-            print("click view card " + monsterCard.Id);
             GameObject.Find("Content").GetComponent<RetieveCardsData>().CallGetRequestImage(monsterCard.ImageUrlHiRes, imageView);
             GameObject.Find("view-card").GetComponent<Monster>().SetMonster(monsterCard.GetMonster());
         }

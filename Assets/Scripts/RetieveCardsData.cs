@@ -34,7 +34,7 @@ public class RetieveCardsData : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(webRequestImageProgress);
+        //print(webRequestImageProgress);
         if (finishRetrieveData && webRequestImageProgress >= listMonster.Count)
         {
             LoadingEffect(false);
@@ -92,8 +92,6 @@ public class RetieveCardsData : MonoBehaviour
         StartCoroutine(GetRequest(urlLink + numPage));
 
         yield return new WaitUntil(() => this.finishRetrieveData);
-
-        print(numPage + " -> " + listMonster.Count);
 
         StartCoroutine(CreatePanelCards());
        
